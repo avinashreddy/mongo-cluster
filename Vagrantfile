@@ -10,6 +10,29 @@ rs.initiate(
       ]
    }
 )
+# User with read/write permission to a clinet db. In this case SSS. 
+db.createUser(
+  {
+    user: "sss_bms",
+    pwd:  "sss_bms_password",
+    roles: [ 
+        { role: "readWrite", db: "sss_bms" },
+        { role: "read", db: "admin" } 
+    ]
+  }
+)
+
+# User with read/write permission to a bms admin database and read access to all other databases. Unless the clues ter is dedicated to bms clinets only, we might want to restrict access to non bms databases. 
+db.createUser(
+  {
+    user: "admin_bms",
+    pwd:  "admin_bms_password",
+    roles: [ 
+        { role: "readWrite", db: "admin_bms" },
+        "readAnyDatabase"
+    ]
+  }
+)
 =end
 
 Vagrant.configure("2") do |config|
