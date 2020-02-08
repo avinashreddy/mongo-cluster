@@ -1,0 +1,98 @@
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:/C=US/ST=New York/L=New York/O=Matrix Application LLC/CN=*.matrixapps.com
+   i:/C=US/O=Entrust, Inc./OU=See www.entrust.net/legal-terms/OU=(c) 2012 Entrust, Inc. - for authorized use only/CN=Entrust Certification Authority - L1K
+-----BEGIN CERTIFICATE-----
+MIIFTTCCBDWgAwIBAgIQX6VJMW56mnEAAAAAUN/bKjANBgkqhkiG9w0BAQsFADCB
+ujELMAkGA1UEBhMCVVMxFjAUBgNVBAoTDUVudHJ1c3QsIEluYy4xKDAmBgNVBAsT
+H1NlZSB3d3cuZW50cnVzdC5uZXQvbGVnYWwtdGVybXMxOTA3BgNVBAsTMChjKSAy
+MDEyIEVudHJ1c3QsIEluYy4gLSBmb3IgYXV0aG9yaXplZCB1c2Ugb25seTEuMCwG
+A1UEAxMlRW50cnVzdCBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEwxSzAeFw0x
+ODAxMTcxNTQ1MTZaFw0yMDAxMTcxNjE1MTVaMG8xCzAJBgNVBAYTAlVTMREwDwYD
+VQQIEwhOZXcgWW9yazERMA8GA1UEBxMITmV3IFlvcmsxHzAdBgNVBAoTFk1hdHJp
+eCBBcHBsaWNhdGlvbiBMTEMxGTAXBgNVBAMMECoubWF0cml4YXBwcy5jb20wggEi
+MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCql1Ts8wu1Q/242FaBV5tn7J7t
+n9SUIBb6J1MpGfQkclNn0pI6uoSCrBLw8vV/d7oCh+QD3SDwNegQXvt7exy7siYm
+q/qI6OaKrcrYyR/BTnLlANvipt4MExqtE0ORjwvbymDpcHFbVXfvUbGPrXWh8HbA
+AG1woTHWXKpe6RDibjZYdKWaroSA4yud0vm0GPxg7Bxq7eB722jlno2xPgg9lB+/
+8CWUvPktXQlJxjuWztgjksjnENg4vcuoaKvAYjiuLP9HvUdLBnx3mH06mPetEixE
+IAhXmyKg2kBL+Go/VVL49PwRlaGPGa/LnM223AruRulm9vYLKvLQ1av+OrblAgMB
+AAGjggGXMIIBkzAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEG
+CCsGAQUFBwMCMDMGA1UdHwQsMCowKKAmoCSGImh0dHA6Ly9jcmwuZW50cnVzdC5u
+ZXQvbGV2ZWwxay5jcmwwSwYDVR0gBEQwQjA2BgpghkgBhvpsCgEFMCgwJgYIKwYB
+BQUHAgEWGmh0dHA6Ly93d3cuZW50cnVzdC5uZXQvcnBhMAgGBmeBDAECAjBoBggr
+BgEFBQcBAQRcMFowIwYIKwYBBQUHMAGGF2h0dHA6Ly9vY3NwLmVudHJ1c3QubmV0
+MDMGCCsGAQUFBzAChidodHRwOi8vYWlhLmVudHJ1c3QubmV0L2wxay1jaGFpbjI1
+Ni5jZXIwKwYDVR0RBCQwIoIQKi5tYXRyaXhhcHBzLmNvbYIObWF0cml4YXBwcy5j
+b20wHwYDVR0jBBgwFoAUgqJwdN28Uz/Pe9T3zX+nYMYKTL8wHQYDVR0OBBYEFNeg
+2ixnLg4WJlUuPnQ5ofAsp3DPMAkGA1UdEwQCMAAwDQYJKoZIhvcNAQELBQADggEB
+AGRP2swFVuPAldQgMmG3NPkt70WQ1Ppt1Wy+TfIhPS6LFEyCk6LIrWnBEhsOxBmT
+70xlBg1ybMJ08Pqx0l92aqcraKHwO2/+JRHYkIVO3t8UYhxZzFaoOIHTcyd0olHd
+c9Hx8wu56viZpeQS255/1U4LbSUDQkdAL+k1pNZq7tG7Yg9pzC2u0CuZPuD6PhaU
+LpYNlIle+sSxzpNIiwZRQJOzHx2I8EJuWuLrPV6jb7h8/3ZkoF5gROD5AuaSCqEd
+ODog4hFx/ZfXy4L4s5G9+EG6t3pvHvUZmuX/UY2MqT2CYxxyYLqrBto45fhvDxgY
+KkLtIzfWlVeWfe59UQMZBHA=
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=/C=US/ST=New York/L=New York/O=Matrix Application LLC/CN=*.matrixapps.com
+issuer=/C=US/O=Entrust, Inc./OU=See www.entrust.net/legal-terms/OU=(c) 2012 Entrust, Inc. - for authorized use only/CN=Entrust Certification Authority - L1K
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Server Temp Key: ECDH, P-256, 256 bits
+---
+SSL handshake has read 2083 bytes and written 460 bytes
+---
+New, TLSv1/SSLv3, Cipher is ECDHE-RSA-AES256-GCM-SHA384
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
+    Session-ID: 4FFD8BF9808C828E5F93E3B81901485C8C0281667DA3914DE5411137870D6C0E
+    Session-ID-ctx: 
+    Master-Key: C86BC2C3006F18C756E8625AE59EBB32597CB1E35CC976953165142B4AE473FE6FB8E94A19A48D0AF0E3DC2DF5457000
+    Key-Arg   : None
+    Krb5 Principal: None
+    PSK identity: None
+    PSK identity hint: None
+    TLS session ticket lifetime hint: 300 (seconds)
+    TLS session ticket:
+    0000 - 4c 51 2e ac 49 67 6c 27-a0 a9 df 84 63 6f 73 4b   LQ..Igl'....cosK
+    0010 - d5 ba c1 bb 04 44 dd 13-8d 01 a9 66 3a 44 a5 0a   .....D.....f:D..
+    0020 - ba fd 6c 53 3a 57 f3 0b-4d bb 47 65 3b 77 08 b6   ..lS:W..M.Ge;w..
+    0030 - 45 03 cf eb 2b 53 a4 47-44 fd ca 6b 99 98 52 b3   E...+S.GD..k..R.
+    0040 - b1 3b d3 9d 02 cd 49 ca-24 25 85 36 3c f4 47 e0   .;....I.$%.6<.G.
+    0050 - 44 a9 79 30 36 67 e7 c3-19 b4 a4 85 87 d2 f6 b6   D.y06g..........
+    0060 - 6a 9e 9f ca dc ef 86 09-5d b8 10 68 ce ae b0 3a   j.......]..h...:
+    0070 - 04 f7 8f 6d 51 8d 83 dd-09 d3 79 3d ae 37 c5 8a   ...mQ.....y=.7..
+    0080 - e8 6c 4a d9 34 39 10 a1-06 16 0f 44 b4 0b 4d c9   .lJ.49.....D..M.
+    0090 - b7 4c 37 91 53 ef 2e fd-a7 46 17 dd de 9c 71 3d   .L7.S....F....q=
+    00a0 - 00 0c a3 bd bc f4 99 c6-32 54 8f 16 da 4d 94 96   ........2T...M..
+    00b0 - ea 50 90 38 34 67 ca 85-53 48 39 dd bc 2b 27 b7   .P.84g..SH9..+'.
+    00c0 - de 62 20 d1 68 8e 3e e1-cf c0 07 81 b6 ba 27 b7   .b .h.>.......'.
+    00d0 - 7c aa 01 4f 61 1e ec a3-b6 ef 65 6e 54 7c 5d fd   |..Oa.....enT|].
+
+    Start Time: 1575503634
+    Timeout   : 300 (sec)
+    Verify return code: 21 (unable to verify the first certificate)
+---
+HTTP/1.1 400 Bad Request
+Server: nginx/1.17.5
+Date: Wed, 04 Dec 2019 23:54:01 GMT
+Content-Type: text/html
+Content-Length: 157
+Connection: close
+
+<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<center><h1>400 Bad Request</h1></center>
+<hr><center>nginx/1.17.5</center>
+</body>
+</html>

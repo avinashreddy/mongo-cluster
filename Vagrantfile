@@ -35,6 +35,65 @@ db.createUser(
 )
 =end
 
+servers = [
+    {
+        :name => "mongo-01",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.113.1.10",
+        :mem => "2048",
+        :cpu => "2"
+    },
+    {
+        :name => "mongo-02",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.113.1.11",
+        :mem => "2048",
+        :cpu => "2"
+    },
+    {
+        :name => "mongo-03",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.113.1.13",
+        :mem => "2048",
+        :cpu => "2"
+    }
+
+]
+
+$configureNode = <<-SCRIPT
+        sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config    
+        systemctl restart sshd
+        useradd admin
+        # you wont need this when setting up the actual vms on vmware
+        echo -e "django\ndjango" | passwd admin
+        usermod -aG wheel admin
+SCRIPT
+
+Vagrant.configure("2") do |config|
+
+    servers.each do |opts|
+        config.vm.define opts[:name] do |config|
+
+            config.vm.box = opts[:box]
+            config.vm.box_version = opts[:box_version]
+            config.vm.hostname = opts[:name]
+            config.vm.network :private_network, ip: opts[:eth1]
+
+            config.vm.provider "virtualbox" do |v|
+                v.name = opts[:name]
+                v.customize ["modifyvm", :id, "--groups", "/highgate"]
+                v.customize ["modifyvm", :id, "--memory", opts[:mem]]
+                v.customize ["modifyvm", :id, "--cpus", opts[:cpu]]
+            end
+            config.vm.provision "shell", inline: $configureNode        
+        end
+    end
+end 
+
+=begin
 Vagrant.configure("2") do |config|
   
  # Use the same key for each machine  config.ssh.insert_key = false
@@ -109,3 +168,4 @@ Vagrant.configure("2") do |config|
     end
  end 
 end
+=end

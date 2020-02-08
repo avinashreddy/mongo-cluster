@@ -1,6 +1,6 @@
 Instructions
 
-Execute the followin gcommand to create and configure the vitual machines 
+Execute the following command to create and configure the vitual machines 
 
 $ vagrant up 
 

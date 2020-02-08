@@ -1,0 +1,4 @@
+[centos]
+mongo-01 ansible_host=10.113.1.10
+mongo-02 ansible_host=10.113.1.11
+mongo-03 ansible_host=10.113.1.13
