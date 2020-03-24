@@ -111,6 +111,7 @@
       docker_container:
         name: mongo
         image: mongo:4.0.12
+        restart_policy: "unless-stopped"
         volumes:
           -  "mongo-data:/data/db/"
           - "{{config_files_dir}}/keyfile:/opt/highgate/etc/keyfile"
