@@ -59,6 +59,22 @@ servers = [
         :eth1 => "10.113.1.13",
         :mem => "2048",
         :cpu => "2"
+    },
+    {
+        :name => "mongo-04",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.113.1.14",
+        :mem => "2048",
+        :cpu => "2"
+    },
+    {
+        :name => "mongo-05",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.113.1.15",
+        :mem => "2048",
+        :cpu => "2"
     }
 
 ]
