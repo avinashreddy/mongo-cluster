@@ -6,6 +6,11 @@
   hosts: "{{target_hosts}}"
 
   tasks:
+    - name: Set deployer public key
+      authorized_key:
+        user: deployer
+        state: present
+        key: "{{ lookup('file', '/home/pakr/.ssh/id_rsa.pub') }}"
     - name: Install yum utils
       yum:
         name: yum-utils
