@@ -134,7 +134,7 @@
     - name: Initialize an empty list for our strings
       set_fact:
         my_strings: "{{my_strings + [hostvars[item].ansible_host  + ':27017']}}"
-      with_items: "{{groups.centos}}"      
+      with_items: "{{groups.mongo}}"      
 
     - debug: var=my_strings     
       
@@ -145,7 +145,7 @@
         login_password: password
         replica_set: rs0
         members: "{{my_strings}}"
-      when: groups.centos.index(inventory_hostname) == 0
+      when: groups.mongo.index(inventory_hostname) == 0
 
       
       

@@ -1,6 +1,15 @@
-[centos]
+[mongo]
 mongo-01 ansible_host=10.113.1.10
 mongo-02 ansible_host=10.113.1.11
 mongo-03 ansible_host=10.113.1.13
 mongo-04 ansible_host=10.113.1.14
 mongo-05 ansible_host=10.113.1.15
+
+[mongo:vars]
+config_files_dir=/opt/mongod/etc/
+
+
+[all:vars]
+ansible_user=admin 
+deployments_user=deployer
+artifactory_user=avinash.palicharla
