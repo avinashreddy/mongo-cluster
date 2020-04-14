@@ -1,0 +1,12 @@
+---
+# todo: pin versions
+- hosts: all
+  tasks:        
+    - name: include all tasks
+      import_tasks: tasks/user.yaml
+    - name: include docker tasks
+      import_tasks: tasks/docker.yaml  
+- hosts: mongo
+  tasks:        
+    - name: include mongo tasks
+      import_tasks: tasks/mongo.yaml
