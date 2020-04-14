@@ -6,6 +6,10 @@
   hosts: "{{target_hosts}}"
 
   tasks:
+    - name: Include vars of stuff.yaml into the 'stuff' variable (2.2).
+      include_vars:
+        file: vars.vault
+        
     - name: Set deployer public key
       authorized_key:
         user: deployer

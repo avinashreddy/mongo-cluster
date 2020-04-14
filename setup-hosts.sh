@@ -6,5 +6,5 @@ ssh-keygen -R 10.113.1.13
 ssh-keygen -R 10.113.1.14
 ssh-keygen -R 10.113.1.15
 
-ansible-playbook -b playbook-configure-hosts.yaml --extra-vars "@vars.vault"
+ansible-playbook -b playbook-configure-hosts.yaml --e target_hosts=mongo
 
