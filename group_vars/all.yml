@@ -1,0 +1,3 @@
+ansible_user: admin 
+deployments_user: deployer
+artifactory_user: avinash.palicharla
