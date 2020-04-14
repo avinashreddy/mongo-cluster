@@ -1,0 +1,7 @@
+ansible_user: admin 
+deployments_user: deployer
+artifactory_user: avinash.palicharla
+ansible_ssh_pass: "{{vault_ansible_ssh_pass}}"
+ansible_sudo_pass: "{{vault_ansible_sudo_pass}}"
+deployments_user_password: "{{vault_deployments_user_password}}"
+artifactory_password: "{{vault_artifactory_password}}"
