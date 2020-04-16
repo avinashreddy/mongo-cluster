@@ -33,7 +33,7 @@ servers = [
         :cpu => "2"
     },
     {
-        :name => "pribcp-mg-02",
+        :name => "pribcp-mg-03",
         :box => "centos/7",
         :box_version => "1905.1",
         :eth1 => "10.201.1.12",
