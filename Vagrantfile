@@ -24,22 +24,54 @@ servers = [
         :mem => "2048",
         :cpu => "2"
     },
-#     {
-#         :name => "pribcp-mg-02",
-#         :box => "centos/7",
-#         :box_version => "1905.1",
-#         :eth1 => "10.201.1.11",
-#         :mem => "2048",
-#         :cpu => "2"
-#     },
-#     {
-#         :name => "pribcp-mg-03",
-#         :box => "centos/7",
-#         :box_version => "1905.1",
-#         :eth1 => "10.201.1.12",
-#         :mem => "2048",
-#         :cpu => "2"
-#     }
+    {
+        :name => "pribcp-mg-02",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.201.1.11",
+        :mem => "2048",
+        :cpu => "2"
+    },
+    {
+        :name => "pribcp-mg-02",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.201.1.12",
+        :mem => "2048",
+        :cpu => "2"
+    },    
+    {
+        :name => "pripro-hgapp-01",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.200.2.10",
+        :mem => "16384",
+        :cpu => "2"
+    },
+    {
+        :name => "pripro-hgapp-02",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.200.2.11",
+        :mem => "16384",
+        :cpu => "2"
+    },
+    {
+        :name => "pribcp-hgapp-01",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.201.2.10",
+        :mem => "16384",
+        :cpu => "2"
+    },
+    {
+        :name => "pribcp-hgapp-02",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.201.2.11",
+        :mem => "16384",
+        :cpu => "2"
+    }
 ]
 
 host_user="admin"
