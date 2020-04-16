@@ -1,0 +1,11 @@
+[mongo]
+mongo-01 ansible_host=10.200.1.10
+mongo-02 ansible_host=10.200.1.11
+mongo-03 ansible_host=10.201.1.10
+
+
+[docker:children]
+mongo
+
+
+

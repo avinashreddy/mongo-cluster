@@ -1,0 +1,14 @@
+---
+- hosts: docker
+  vars:
+    pip_install_packages:
+      - name: docker
+  roles:
+    - geerlingguy.repo-epel
+    - geerlingguy.pip
+    - geerlingguy.docker
+  tasks:        
+    - name: create users
+      import_tasks: tasks/user.yaml
+    - name: install artifactory certificates
+      import_tasks: tasks/install-artifactorty-certificates.yaml  

@@ -1,0 +1,17 @@
+---        
+    - name: Install ca-certificates
+      yum:
+        name: ca-certificates
+        state: latest   
+    
+    - name: copy artifactory certs
+      copy: src={{ item.src }} dest={{ item.dest }}
+      with_items:
+        - { src: './resources/docker-artifactory.matrixapps.com/cacert.crt', dest: '/etc/pki/ca-trust/source/anchors/cacert.crt' }
+        - { src: './resources/docker-artifactory.matrixapps.com/cacert.pem', dest: '/etc/pki/ca-trust/source/anchors/cacert.pem' }
+        - { src: './resources/docker-artifactory.matrixapps.com/Intermediate.crt', dest: '/etc/pki/ca-trust/source/anchors/Intermediate.crt' }
+    
+    - name: Install ca-certificates
+      command: update-ca-trust        
+      become: yes 
+      

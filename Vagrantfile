@@ -1,45 +1,45 @@
 
 servers = [
     {
-        :name => "mongo-01",
+        :name => "pripro-mg-01",
         :box => "centos/7",
         :box_version => "1905.1",
-        :eth1 => "10.113.1.10",
+        :eth1 => "10.200.1.10",
         :mem => "2048",
         :cpu => "2"
     },
     {
-        :name => "mongo-02",
+        :name => "pripro-mg-02",
         :box => "centos/7",
         :box_version => "1905.1",
-        :eth1 => "10.113.1.11",
+        :eth1 => "10.200.1.11",
         :mem => "2048",
         :cpu => "2"
     },
     {
-        :name => "mongo-03",
+        :name => "pribcp-mg-01",
         :box => "centos/7",
         :box_version => "1905.1",
-        :eth1 => "10.113.1.13",
+        :eth1 => "10.201.1.10",
         :mem => "2048",
         :cpu => "2"
     },
-    {
-        :name => "mongo-04",
-        :box => "centos/7",
-        :box_version => "1905.1",
-        :eth1 => "10.113.1.14",
-        :mem => "2048",
-        :cpu => "2"
-    },
-    {
-        :name => "mongo-05",
-        :box => "centos/7",
-        :box_version => "1905.1",
-        :eth1 => "10.113.1.15",
-        :mem => "2048",
-        :cpu => "2"
-    }
+#     {
+#         :name => "pribcp-mg-02",
+#         :box => "centos/7",
+#         :box_version => "1905.1",
+#         :eth1 => "10.201.1.11",
+#         :mem => "2048",
+#         :cpu => "2"
+#     },
+#     {
+#         :name => "pribcp-mg-03",
+#         :box => "centos/7",
+#         :box_version => "1905.1",
+#         :eth1 => "10.201.1.12",
+#         :mem => "2048",
+#         :cpu => "2"
+#     }
 ]
 
 host_user="admin"
