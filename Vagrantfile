@@ -17,6 +17,14 @@ servers = [
         :cpu => "2"
     },
     {
+        :name => "pripro-mg-03",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.200.1.12",
+        :mem => "2048",
+        :cpu => "2"
+    },    
+    {
         :name => "pribcp-mg-01",
         :box => "centos/7",
         :box_version => "1905.1",
@@ -71,7 +79,23 @@ servers = [
         :eth1 => "10.201.2.11",
         :mem => "16384",
         :cpu => "2"
-    }
+    },
+    {
+        :name => "pripro-portainer-01",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.200.3.10",
+        :mem => "1024",
+        :cpu => "1"
+    },
+    {
+        :name => "pribcp-portainer-01",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.201.3.10",
+        :mem => "16384",
+        :cpu => "2"
+    }    
 ]
 
 host_user="admin"

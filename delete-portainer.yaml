@@ -1,0 +1,25 @@
+---
+- name: remove Portainer
+  gather_facts: yes
+  hosts: portainer
+  
+  tasks:
+    - name: remove portainer
+      docker_container:
+        name: portainer
+        state: absent 
+      
+    - name: remove portainer volume
+      docker_volume:
+        name: portainer_data 
+        state: absent
+    
+- name: remove Portainer agent
+  gather_facts: yes
+  hosts: portainer_agent
+  
+  tasks:        
+    - name: remove portainer agent
+      docker_container:
+        name: portainer-agent
+        state: absent      

@@ -5,7 +5,7 @@
 
 # a script to ssh multiple servers over multiple tmux panes
 
-DEFAULT_HOSTS="10.113.1.10 10.113.1.11 10.113.1.13 10.113.1.14 10.113.1.15"
+DEFAULT_HOSTS="10.200.2.10 10.200.2.11 10.201.2.10 10.201.2.11 10.113.2.15"
 starttmux() {
     if [ -z "$HOSTS" ]; then
        #echo -n "Please provide of list of hosts separated by spaces [ENTER]: "
