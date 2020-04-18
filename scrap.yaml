@@ -1,4 +1,24 @@
----
+---        
+- name: Install Portainer agent
+  gather_facts: yes
+  hosts: portainer_agent
+  
+  tasks:
+    - name: Run portainer agent
+      docker_container:
+        name: portainer-agent
+        image: portainer/agent:1.5.1
+        restart_policy: always
+        state: started
+        ports:
+          - "9001:9001"
+        volumes:
+           - /var/run/docker.sock:/var/run/docker.sock
+           - /var/lib/docker/volumes:/var/lib/docker/volumes
+        env:
+          AGENT_SECRET: "{{portainer_agent_key}}"           
+           
+           
 - name: Install Portainer
   gather_facts: yes
   hosts: portainer
@@ -30,30 +50,21 @@
         env:
           AGENT_SECRET: "{{portainer_agent_key}}"
         command: >
-            --admin-password-file /etc/portainer/key
+            --admin-password-file /etc/portainer/key      
         
-- name: Install Portainer agent
+
+- name: Add agents endpoints
   gather_facts: yes
-  hosts: portainer_agent
+  hosts: portainer
   
-  tasks:
-    - name: Run portainer agent
-      docker_container:
-        name: portainer-agent
-        image: portainer/agent:1.5.1
-        restart_policy: always
-        state: started
-        ports:
-          - "9001:9001"
-        volumes:
-           - /var/run/docker.sock:/var/run/docker.sock
-           - /var/lib/docker/volumes:/var/lib/docker/volumes
-        env:
-          AGENT_SECRET: "{{portainer_agent_key}}"           
-           
+  tasks:          
+    - set_fact:
+        portainer_api: "http://{{hostvars[inventory_hostname].ansible_host}}:9000/api"
+        agent_name: "{{inventory_hostname}}"
+        
     - name: get portainer API token
       uri: 
-        url: "http://10.200.3.10:9000/api/auth"
+        url: "{{portainer_api}}/auth"
         method: POST
         return_content: yes
         body: 
@@ -64,41 +75,37 @@
       until: portainer_auth_response.status == 200
       retries: 10
       delay: 5
-      #loop: "{{ echo.results }}"
         
     - set_fact:
         portainer_jwt: "{{portainer_auth_response.json.jwt}}"
-        agent_name: "{{inventory_hostname}}"
         
-    - name: check if endpoint
+        
+    - name: get registered endpoints
       uri: 
-        url: "http://10.200.3.10:9000/api/endpoints"
+        url: "{{portainer_api}}/endpoints"
         method: GET
         headers: 
             Authorization: Bearer {{portainer_jwt}}
         return_content: yes
         body_format: json
-      register: portainer_endpoints_response
-      until: portainer_endpoints_response.status == 200
+      register: portainer_known_endpoints_raw
+      until: portainer_known_endpoints_raw.status == 200
       retries: 10
       delay: 5    
    
     - set_fact:
-        agent_exists: "{{portainer_endpoints_response.json | selectattr('Name', 'equalto', agent_name) | list | length}}"
- 
-    - debug:
-        msg: "{{agent_name}} {{agent_exists}}"
-    
+        portainer_known_endpoints: "{{portainer_known_endpoints_raw.json | map(attribute='Name') | list}}"
+      
     - name: add endpoint
       uri: 
-        url: "http://10.200.3.10:9000/api/endpoints"
+        url: "{{portainer_api}}/endpoints"
         method: POST
         headers: 
             Authorization: Bearer {{portainer_jwt}}
         return_content: yes
         body: 
-            Name: "{{agent_name}}"
-            URL: "tcp://{{hostvars[inventory_hostname].ansible_host}}:9001"
+            Name: "{{item}}"
+            URL: "tcp://{{hostvars[item].ansible_host}}:9001"
             TLS: "true"
             TLSSkipVerify: "true"
             TLSSkipClientVerify: "true"
@@ -108,5 +115,7 @@
       until: portainer_endpoints_create.status == 200
       retries: 10
       delay: 5
-      when: agent_exists == '0'
-        
+      when: item not in portainer_known_endpoints
+      loop: "{{groups['portainer_agent']}}"
+      
+              
