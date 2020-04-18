@@ -1,0 +1,28 @@
+---        
+    - name: Create portainer key file
+      copy:
+        content: "{{portainer_admin_password}}"
+        dest: /etc/portainer/key
+    
+    - name: Create portainer volume
+      docker_volume:
+        name: portainer_data 
+      
+    - name: Run portainer
+      docker_container:
+        name: portainer
+        image: portainer/portainer:1.23.2
+        restart_policy: always
+        state: started
+        ports:
+          - "9000:9000"
+          - "8000:8000"
+        volumes:
+           - "/var/run/docker.sock:/var/run/docker.sock"
+           - "/etc/portainer/key:/etc/portainer/key"
+           - "portainer_data:/data"
+        env:
+          AGENT_SECRET: "{{portainer_agent_key}}"
+        command: >
+            --admin-password-file /etc/portainer/key      
+            

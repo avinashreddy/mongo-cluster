@@ -11,4 +11,20 @@
     - name: create users
       import_tasks: tasks/create-user.yaml
     - name: install artifactory certificates
-      import_tasks: tasks/install-artifactorty-certificates.yaml  
+      import_tasks: tasks/install-artifactorty-certificates.yaml 
+
+
+- hosts: portainer_agent   
+  tasks:        
+    - import_tasks: tasks/install-portainer-agent.yaml
+    
+    
+- hosts: portainer   
+  tasks:        
+    - import_tasks: tasks/install-portainer.yaml 
+    - import_tasks: tasks/add-agent-endpoints.yaml    
+
+
+
+    
+   

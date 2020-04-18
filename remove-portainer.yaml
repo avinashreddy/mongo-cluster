@@ -1,0 +1,10 @@
+---
+- hosts: portainer   
+  tasks:        
+    - import_tasks: tasks/remove-portainer.yaml 
+    
+- hosts: portainer_agent   
+  tasks:        
+    - import_tasks: tasks/remove-portainer-agent.yaml
+    
+   

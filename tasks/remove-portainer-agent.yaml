@@ -1,0 +1,5 @@
+---     
+    - name: remove portainer agent
+      docker_container:
+        name: portainer-agent
+        state: absent      

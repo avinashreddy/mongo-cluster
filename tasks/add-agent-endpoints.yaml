@@ -1,0 +1,62 @@
+---        
+    - set_fact:
+        portainer_api: "http://{{hostvars[inventory_hostname].ansible_host}}:9000/api"
+        agent_name: "{{inventory_hostname}}"
+        
+    - name: Get portainer API token
+      uri: 
+        url: "{{portainer_api}}/auth"
+        method: POST
+        return_content: yes
+        body: 
+            Username: admin
+            Password: "{{portainer_admin_password}}"
+        body_format: json
+      register: portainer_auth_response
+      until: portainer_auth_response.status == 200
+      retries: 10
+      delay: 5
+        
+    - set_fact:
+        portainer_jwt: "{{portainer_auth_response.json.jwt}}"
+        
+        
+    - name: Get registered endpoints
+      uri: 
+        url: "{{portainer_api}}/endpoints"
+        method: GET
+        headers: 
+            Authorization: Bearer {{portainer_jwt}}
+        return_content: yes
+        body_format: json
+      register: portainer_known_endpoints_raw
+      until: portainer_known_endpoints_raw.status == 200
+      retries: 10
+      delay: 5    
+   
+    - set_fact:
+        portainer_known_endpoints: "{{portainer_known_endpoints_raw.json | map(attribute='Name') | list}}"
+      
+    - name: Add endpoint
+      uri: 
+        url: "{{portainer_api}}/endpoints"
+        method: POST
+        headers: 
+            Authorization: Bearer {{portainer_jwt}}
+        return_content: yes
+        body: 
+            Name: "{{item}}"
+            URL: "tcp://{{hostvars[item].ansible_host}}:9001"
+            TLS: "true"
+            TLSSkipVerify: "true"
+            TLSSkipClientVerify: "true"
+            EndpointType: 2
+        body_format: form-urlencoded
+      register: portainer_endpoints_create  
+      until: portainer_endpoints_create.status == 200
+      retries: 10
+      delay: 5
+      when: item not in portainer_known_endpoints
+      loop: "{{groups['portainer_agent']}}"
+      
+              
