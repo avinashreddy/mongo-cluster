@@ -9,6 +9,6 @@
     - geerlingguy.docker
   tasks:        
     - name: create users
-      import_tasks: tasks/user.yaml
+      import_tasks: tasks/create-user.yaml
     - name: install artifactory certificates
       import_tasks: tasks/install-artifactorty-certificates.yaml  
