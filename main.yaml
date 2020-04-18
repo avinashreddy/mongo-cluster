@@ -1,5 +1,5 @@
 ---
-- hosts: docker
+- hosts: all
   vars:
     pip_install_packages:
       - name: docker

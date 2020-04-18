@@ -14,13 +14,9 @@ bcppro-hgapp-01 ansible_host=10.201.2.10
 bcppro-hgapp-02 ansible_host=10.201.2.11
 
 
-[docker:children]
+[portainer_agent:children]
 mongo
 highgate
-portainer
-
-[portainer_agent:children]
-docker
 
 [portainer]
 pripro-portainer-01 ansible_host=10.200.3.10
