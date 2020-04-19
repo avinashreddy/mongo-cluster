@@ -1,1 +1,5 @@
 .vagrant
+
+# Excluding all .key files to prevent accidental commit of encryption keys - provided you put your encryption key in a .key file.
+**/*.key
+**/*.log

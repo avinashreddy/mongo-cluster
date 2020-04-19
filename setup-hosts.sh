@@ -12,5 +12,5 @@ ssh-keygen -R 10.201.2.10
 ssh-keygen -R 10.201.2.11
 
 
-ansible-playbook -b main.yaml --ask-vault-pass
+ansible-playbook -b main.yaml --vault-id @prompt
 
