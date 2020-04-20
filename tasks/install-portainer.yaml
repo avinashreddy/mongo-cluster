@@ -1,5 +1,11 @@
 ---        
+    - name: create portainer config dir
+      file:
+        path: /etc/portainer
+        state: directory
+
     - name: Create portainer key file
+      #no_log: true    
       copy:
         content: "{{portainer_admin_password}}"
         dest: /etc/portainer/key
@@ -9,6 +15,7 @@
         name: portainer_data 
       
     - name: Run portainer
+      no_log: true    
       docker_container:
         name: portainer
         image: portainer/portainer:1.23.2

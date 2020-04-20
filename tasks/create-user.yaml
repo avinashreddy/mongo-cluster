@@ -1,5 +1,6 @@
 ---
     - name: Create {{deployments_user}} user
+      no_log: true
       user:
         name: "{{deployments_user}}"
         # encrypt the password  

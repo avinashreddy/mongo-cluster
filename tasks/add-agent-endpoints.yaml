@@ -4,6 +4,7 @@
         agent_name: "{{inventory_hostname}}"
         
     - name: Get portainer API token
+      no_log: true
       uri: 
         url: "{{portainer_api}}/auth"
         method: POST

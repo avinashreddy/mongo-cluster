@@ -4,7 +4,7 @@ servers = [
         :name => "pripro-mg-01",
         :box => "centos/7",
         :box_version => "1905.1",
-        :eth1 => "10.200.11.10",
+        :eth1 => "10.200.1.10",
         :mem => "2048",
         :cpu => "2",
     },
@@ -12,7 +12,7 @@ servers = [
         :name => "pripro-mg-02",
         :box => "centos/7",
         :box_version => "1905.1",
-        :eth1 => "10.200.11.11",
+        :eth1 => "10.200.1.11",
         :mem => "2048",
         :cpu => "2"
     },
@@ -20,7 +20,7 @@ servers = [
         :name => "pripro-mg-03",
         :box => "centos/7",
         :box_version => "1905.1",
-        :eth1 => "10.200.11.12",
+        :eth1 => "10.200.1.12",
         :mem => "2048",
         :cpu => "2"
     },    
@@ -52,7 +52,7 @@ servers = [
         :name => "pripro-hgapp-01",
         :box => "centos/7",
         :box_version => "1905.1",
-        :eth1 => "10.200.21.10",
+        :eth1 => "10.200.2.10",
         :mem => "16384",
         :cpu => "2"
     },
@@ -60,7 +60,7 @@ servers = [
         :name => "pripro-hgapp-02",
         :box => "centos/7",
         :box_version => "1905.1",
-        :eth1 => "10.200.21.11",
+        :eth1 => "10.200.2.11",
         :mem => "16384",
         :cpu => "2"
     },

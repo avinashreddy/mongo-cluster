@@ -1,5 +1,7 @@
 ---
 - hosts: all
+  any_errors_fatal: true
+  gather_facts: yes
   vars:
     pip_install_packages:
       - name: docker
@@ -15,11 +17,15 @@
 
 
 - hosts: portainer_agent   
+  any_errors_fatal: true
+  gather_facts: yes
   tasks:        
     - import_tasks: tasks/install-portainer-agent.yaml
     
     
-- hosts: portainer   
+- hosts: portainer 
+  any_errors_fatal: true
+  gather_facts: yes
   tasks:        
     - import_tasks: tasks/install-portainer.yaml 
     - import_tasks: tasks/add-agent-endpoints.yaml    

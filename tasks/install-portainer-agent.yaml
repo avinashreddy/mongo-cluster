@@ -1,5 +1,6 @@
 ---        
     - name: Run portainer agent
+      no_log: true      
       docker_container:
         name: portainer-agent
         image: portainer/agent:1.5.1

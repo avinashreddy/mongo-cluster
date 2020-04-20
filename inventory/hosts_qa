@@ -1,0 +1,24 @@
+[mongo]
+priqa-mg-01 ansible_host=10.200.11.10  
+priqa-mg-02 ansible_host=10.200.11.11
+priqa-mg-03 ansible_host=10.200.11.12
+bcpqa-mg-01 ansible_host=10.201.11.10
+bcpqa-mg-02 ansible_host=10.201.11.11
+bcpqa-mg-03 ansible_host=10.201.11.12
+
+[highgate]
+priqa-hgapp-01 ansible_host=10.200.21.10 
+priqa-hgapp-02 ansible_host=10.200.21.11 
+bcpqa-hgapp-01 ansible_host=10.201.21.10
+bcpqa-hgapp-02 ansible_host=10.201.21.11
+
+
+[portainer_agent:children]
+mongo
+highgate
+
+[portainer]
+priqa-portainer-01 ansible_host=10.200.31.10
+bcpqa-portainer-01 ansible_host=10.201.31.10
+
+
