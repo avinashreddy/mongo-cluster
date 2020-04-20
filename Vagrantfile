@@ -4,15 +4,15 @@ servers = [
         :name => "pripro-mg-01",
         :box => "centos/7",
         :box_version => "1905.1",
-        :eth1 => "10.200.1.10",
+        :eth1 => "10.200.11.10",
         :mem => "2048",
-        :cpu => "2"
+        :cpu => "2",
     },
     {
         :name => "pripro-mg-02",
         :box => "centos/7",
         :box_version => "1905.1",
-        :eth1 => "10.200.1.11",
+        :eth1 => "10.200.11.11",
         :mem => "2048",
         :cpu => "2"
     },
@@ -20,12 +20,12 @@ servers = [
         :name => "pripro-mg-03",
         :box => "centos/7",
         :box_version => "1905.1",
-        :eth1 => "10.200.1.12",
+        :eth1 => "10.200.11.12",
         :mem => "2048",
         :cpu => "2"
     },    
     {
-        :name => "pribcp-mg-01",
+        :name => "bcppro-mg-01",
         :box => "centos/7",
         :box_version => "1905.1",
         :eth1 => "10.201.1.10",
@@ -33,7 +33,7 @@ servers = [
         :cpu => "2"
     },
     {
-        :name => "pribcp-mg-02",
+        :name => "bcppro-mg-02",
         :box => "centos/7",
         :box_version => "1905.1",
         :eth1 => "10.201.1.11",
@@ -41,7 +41,7 @@ servers = [
         :cpu => "2"
     },
     {
-        :name => "pribcp-mg-03",
+        :name => "bcppro-mg-03",
         :box => "centos/7",
         :box_version => "1905.1",
         :eth1 => "10.201.1.12",
@@ -52,7 +52,7 @@ servers = [
         :name => "pripro-hgapp-01",
         :box => "centos/7",
         :box_version => "1905.1",
-        :eth1 => "10.200.2.10",
+        :eth1 => "10.200.21.10",
         :mem => "16384",
         :cpu => "2"
     },
@@ -60,12 +60,12 @@ servers = [
         :name => "pripro-hgapp-02",
         :box => "centos/7",
         :box_version => "1905.1",
-        :eth1 => "10.200.2.11",
+        :eth1 => "10.200.21.11",
         :mem => "16384",
         :cpu => "2"
     },
     {
-        :name => "pribcp-hgapp-01",
+        :name => "bcppro-hgapp-01",
         :box => "centos/7",
         :box_version => "1905.1",
         :eth1 => "10.201.2.10",
@@ -73,7 +73,7 @@ servers = [
         :cpu => "2"
     },
     {
-        :name => "pribcp-hgapp-02",
+        :name => "bcppro-hgapp-02",
         :box => "centos/7",
         :box_version => "1905.1",
         :eth1 => "10.201.2.11",
@@ -89,10 +89,106 @@ servers = [
         :cpu => "1"
     },
     {
-        :name => "pribcp-portainer-01",
+        :name => "bcppro-portainer-01",
         :box => "centos/7",
         :box_version => "1905.1",
         :eth1 => "10.201.3.10",
+        :mem => "16384",
+        :cpu => "2"
+    },
+    {
+        :name => "priqa-mg-01",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.200.11.10",
+        :mem => "2048",
+        :cpu => "2"
+    },
+    {
+        :name => "priqa-mg-02",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.200.11.11",
+        :mem => "2048",
+        :cpu => "2"
+    },
+    {
+        :name => "priqa-mg-03",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.200.11.12",
+        :mem => "2048",
+        :cpu => "2"
+    },    
+    {
+        :name => "bcpqa-mg-01",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.201.11.10",
+        :mem => "2048",
+        :cpu => "2"
+    },
+    {
+        :name => "bcpqa-mg-02",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.201.11.11",
+        :mem => "2048",
+        :cpu => "2"
+    },
+    {
+        :name => "bcpqa-mg-03",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.201.11.12",
+        :mem => "2048",
+        :cpu => "2"
+    },    
+    {
+        :name => "priqa-hgapp-01",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.200.21.10",
+        :mem => "16384",
+        :cpu => "2"
+    },
+    {
+        :name => "priqa-hgapp-02",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.200.21.11",
+        :mem => "16384",
+        :cpu => "2"
+    },
+    {
+        :name => "bcpqa-hgapp-01",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.201.21.10",
+        :mem => "16384",
+        :cpu => "2"
+    },
+    {
+        :name => "bcpqa-hgapp-02",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.201.21.11",
+        :mem => "16384",
+        :cpu => "2"
+    },
+    {
+        :name => "priqa-portainer-01",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.200.31.10",
+        :mem => "1024",
+        :cpu => "1"
+    },
+    {
+        :name => "bcpqa-portainer-01",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.201.31.10",
         :mem => "16384",
         :cpu => "2"
     }    
@@ -128,8 +224,10 @@ Vagrant.configure("2") do |config|
             config.vm.network :private_network, ip: opts[:eth1]
 
             config.vm.provider "virtualbox" do |v|
+                name = opts[:name]
+                group = name[(name.index("-") + 1) .. (name.rindex("-") - 1)]
                 v.name = opts[:name]
-                v.customize ["modifyvm", :id, "--groups", "/highgate"]
+                v.customize ["modifyvm", :id, "--groups", "/" + group]
                 v.customize ["modifyvm", :id, "--memory", opts[:mem]]
                 v.customize ["modifyvm", :id, "--cpus", opts[:cpu]]
             end
