@@ -12,10 +12,14 @@ priqa-hgapp-02 ansible_host=10.200.21.11
 bcpqa-hgapp-01 ansible_host=10.201.21.10
 bcpqa-hgapp-02 ansible_host=10.201.21.11
 
+[awx]
+pirqa-awx-01 ansible_host=10.200.41.10
+
 
 [portainer_agent:children]
 mongo
 highgate
+awx
 
 [portainer]
 priqa-portainer-01 ansible_host=10.200.31.10

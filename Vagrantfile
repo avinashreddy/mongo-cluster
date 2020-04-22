@@ -191,7 +191,15 @@ servers = [
         :eth1 => "10.201.31.10",
         :mem => "16384",
         :cpu => "2"
-    }    
+    },
+    {
+        :name => "priqa-awx-01",
+        :box => "centos/7",
+        :box_version => "1905.1",
+        :eth1 => "10.200.41.10",
+        :mem => "8194",
+        :cpu => "6"
+    }        
 ]
 
 host_user="admin"
