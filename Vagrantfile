@@ -87,7 +87,7 @@ servers = [
         :eth1 => "10.200.3.10",
         :mem => "1024",
         :cpu => "1"
-    },
+    }, 
     {
         :name => "bcppro-portainer-01",
         :box => "centos/7",
@@ -191,15 +191,7 @@ servers = [
         :eth1 => "10.201.31.10",
         :mem => "16384",
         :cpu => "2"
-    },
-    {
-        :name => "priqa-awx-01",
-        :box => "centos/7",
-        :box_version => "1905.1",
-        :eth1 => "10.200.41.10",
-        :mem => "8194",
-        :cpu => "6"
-    }        
+    }      
 ]
 
 host_user="admin"
@@ -225,13 +217,13 @@ Vagrant.configure("2") do |config|
     
     servers.each do |opts|
         config.vm.define opts[:name] do |config|
-
+            config.vm.provider "vmware_desktop"
             config.vm.box = opts[:box]
             config.vm.box_version = opts[:box_version]
             config.vm.hostname = opts[:name]
             config.vm.network :private_network, ip: opts[:eth1]
 
-            config.vm.provider "virtualbox" do |v|
+            config.vm.provider "vmware_desktop" do |v|
                 name = opts[:name]
                 group = name[(name.index("-") + 1) .. (name.rindex("-") - 1)]
                 v.name = opts[:name]
