@@ -22,4 +22,7 @@ highgate
 pripro-portainer-01 ansible_host=10.200.3.10
 bcppro-portainer-01 ansible_host=10.201.3.10
 
+[pulp]
+bcppro-pulp-01 ansible_host=10.200.3.20
+
 
