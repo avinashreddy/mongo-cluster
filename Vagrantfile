@@ -217,7 +217,7 @@ Vagrant.configure("2") do |config|
     
     servers.each do |opts|
         config.vm.define opts[:name] do |config|
-            config.vm.provider "vmware_desktop"
+            config.vm.provider "virtualbox"
             config.vm.box = opts[:box]
             config.vm.box_version = opts[:box_version]
             config.vm.hostname = opts[:name]
