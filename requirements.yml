@@ -6,3 +6,4 @@
 - src: geerlingguy.pip
 - src: geerlingguy.nodejs
 - src: geerlingguy.awx
+- src: linux-system-roles.cockpit

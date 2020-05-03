@@ -1,4 +1,8 @@
 ---
+- hosts: all 
+  gather_facts: yes    
+  roles:
+    - linux-system-roles.cockpit    
 - hosts: all
   any_errors_fatal: true
   gather_facts: yes
@@ -29,15 +33,7 @@
   tasks:        
     - import_tasks: tasks/install-portainer.yaml 
     - import_tasks: tasks/add-agent-endpoints.yaml   
-    
-- hosts: awx 
-  any_errors_fatal: true
-  gather_facts: yes    
-  roles:
-    - geerlingguy.git
-    - geerlingguy.ansible
-    - geerlingguy.nodejs
-    - geerlingguy.awx    
+
 
 
 
