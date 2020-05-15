@@ -1,8 +1,15 @@
 ---
-- hosts: all 
-  gather_facts: yes    
-  roles:
-    - linux-system-roles.cockpit    
+#- hosts: all 
+  #any_errors_fatal: true
+  #gather_facts: yes    
+  #roles:
+    #- linux-system-roles.cockpit    
+  #tasks:
+    #- name: enable cockpit service
+      #systemd:
+        #state: started
+        #enabled: true
+        #name: cockpit
 - hosts: all
   any_errors_fatal: true
   gather_facts: yes
