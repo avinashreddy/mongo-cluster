@@ -63,23 +63,15 @@ servers = [
         :eth1 => "10.200.1.14",
         :mem => "2048",
         :cpu => "2"
-    },    
-    {
-        :name => "bcppro-pg-01",
-        :box => "centos/7",
-        :box_version => "1905.1",
-        :eth1 => "10.201.1.13",
-        :mem => "2048",
-        :cpu => "2"
     },
     {
-        :name => "bcppro-pg-02",
+        :name => "pripro-pg-03",
         :box => "centos/7",
         :box_version => "1905.1",
-        :eth1 => "10.201.1.14",
+        :eth1 => "10.200.1.15",
         :mem => "2048",
         :cpu => "2"
-    },    
+    },   
     {
         :name => "pripro-hgapp-01",
         :box => "centos/7",
@@ -125,8 +117,8 @@ servers = [
         :box => "centos/7",
         :box_version => "1905.1",
         :eth1 => "10.201.3.10",
-        :mem => "16384",
-        :cpu => "2"
+        :mem => "1024",
+        :cpu => "1"
     }
 ]
 
