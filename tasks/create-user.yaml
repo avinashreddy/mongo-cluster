@@ -10,8 +10,8 @@
         groups: wheel
         append: yes
       become: yes  
-    - name: Set {{deployments_user}} user public key
-      authorized_key:
-        user: "{{deployments_user}}"
-        state: present
-        key: "{{ lookup('file', '/home/pakr/.ssh/id_rsa.pub') }}"
+    #- name: Set {{deployments_user}} user public key
+      #authorized_key:
+        #user: "{{deployments_user}}"
+        #state: present
+        #key: "{{ lookup('file', '/home/pakr/.ssh/id_rsa.pub') }}"
