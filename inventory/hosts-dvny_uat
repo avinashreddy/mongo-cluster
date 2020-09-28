@@ -1,0 +1,9 @@
+[highgate]
+priuat-hgapp-04-dvny ansible_host=38.133.179.166
+
+
+[portainer_agent:children]
+highgate
+
+[portainer]
+priuat-portainer-01 ansible_host=10.254.102.219

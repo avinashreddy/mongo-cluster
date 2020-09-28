@@ -1,0 +1,13 @@
+
+
+
+[highgate]
+priuat-hgapp-03-glacier ansible_host=10.254.102.218
+
+
+
+[portainer_agent:children]
+highgate
+
+[portainer]
+priuat-portainer-01 ansible_host=10.254.102.219

@@ -1,0 +1,14 @@
+[highgate]
+pripro-hgapp-01-sss ansible_host=10.254.122.50
+
+[mongo]
+pripro-hgdb-01 ansible_host=10.254.123.70
+pripro-hgdb-02 ansible_host=10.254.123.71
+pripro-hgdb-03 ansible_host=10.254.123.72
+
+[portainer_agent:children]
+highgate
+mongo
+
+[portainer]
+pripro-portainer-01 ansible_host=10.254.122.54

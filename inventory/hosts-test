@@ -1,0 +1,9 @@
+[highgate]
+temp-01 ansible_host=192.168.0.10
+
+
+[portainer_agent:children]
+highgate
+
+[portainer]
+temp-02 ansible_host=192.168.0.11
